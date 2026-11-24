@@ -62,6 +62,7 @@ public class TransportHandler {
                     long count = minutes / r.getIntervalMinutes() + 1;
                     return Flux.range(0, (int) count)
                             .map(i -> new ScheduleEntry(
+                                    null,
                                     r.getId(),
                                     r.getFirstDeparture().plusMinutes((long) i * r.getIntervalMinutes())));
                 });
